@@ -12,9 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Employees route are here
+Route::get('employees/create', 'EmployeeController@create')->name('employees.create');
+Route::get('employees/index', 'EmployeeController@index')->name('employees.index');
+Route::post('employees/store', 'EmployeeController@store')->name('employees.store');

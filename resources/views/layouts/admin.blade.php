@@ -5,22 +5,24 @@
 <!-- Mirrored from coderthemes.com/moltran/layouts/blue-vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 May 2020 17:49:47 GMT -->
 <head>
         <meta charset="utf-8" />
-        <title>Dashboard</title>
+        <title>@yield('title')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Responsive bootstrap 4 admin template" name="description" />
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{('frontend/admin/images/favicon.ico')}}">
+        <link rel="shortcut icon" href="{{asset('frontend/admin/images/favicon.ico')}}">
 
         <!-- Plugins css-->
-        <link href="{{('frontend/admin/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
-
+        <link href="{{asset('frontend/admin/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="{{('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css')}}">
         <!-- App css -->
-        <link href="{{('frontend/admin/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" id="bootstrap-stylesheet" />
-        <link href="{{('frontend/admin/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{('frontend/admin/css/app.min.css')}}" rel="stylesheet" type="text/css" id="app-stylesheet" />
-
+        <link href="{{asset('frontend/admin/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" id="bootstrap-stylesheet" />
+        <link href="{{asset('frontend/admin/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('frontend/admin/css/app.min.css')}}" rel="stylesheet" type="text/css" id="app-stylesheet" />
+        <script src="https://kit.fontawesome.com/3f9b5b8735.js" crossorigin="anonymous"></script>
+        <link href="{{asset('frontend/admin/libs/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+    
     </head>
 
     <body>
@@ -35,27 +37,27 @@
 
                     <li class="dropdown d-none d-lg-block">
                         <a class="nav-link dropdown-toggle mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="{{('frontend/admin/images/flags/us.jpg')}}" alt="user-image" class="mr-2" height="12"> <span class="align-middle">English <i class="mdi mdi-chevron-down"></i> </span>
+                            <img src="{{asset('frontend/admin/images/flags/us.jpg')}}" alt="user-image" class="mr-2" height="12"> <span class="align-middle">English <i class="mdi mdi-chevron-down"></i> </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <img src="{{('frontend/admin/images/flags/germany.jpg')}}" alt="user-image" class="mr-2" height="12"> <span class="align-middle">German</span>
+                                <img src="{{asset('frontend/admin/images/flags/germany.jpg')}}" alt="user-image" class="mr-2" height="12"> <span class="align-middle">German</span>
                             </a>
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <img src="{{('frontend/admin/images/flags/italy.jpg')}}" alt="user-image" class="mr-2" height="12"> <span class="align-middle">Italian</span>
+                                <img src="{{asset('frontend/admin/images/flags/italy.jpg')}}" alt="user-image" class="mr-2" height="12"> <span class="align-middle">Italian</span>
                             </a>
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <img src="{{('frontend/admin/images/flags/spain.jpg')}}" alt="user-image" class="mr-2" height="12"> <span class="align-middle">Spanish</span>
+                                <img src="{{asset('frontend/admin/images/flags/spain.jpg')}}" alt="user-image" class="mr-2" height="12"> <span class="align-middle">Spanish</span>
                             </a>
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <img src="{{('frontend/admin//images/flags/russia.jpg')}}" alt="user-image" class="mr-2" height="12"> <span class="align-middle">Russian</span>
+                                <img src="{{asset('frontend/admin//images/flags/russia.jpg')}}" alt="user-image" class="mr-2" height="12"> <span class="align-middle">Russian</span>
                             </a>
                         </div>
                     </li>
@@ -124,7 +126,7 @@
 
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="{{('frontend/admin/images/users/avatar-1.jpg')}}" alt="user-image" class="rounded-circle">
+                            <img src="{{asset('frontend/admin/images/users/avatar-1.jpg')}}" alt="user-image" class="rounded-circle">
                             <span>Bishajit</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
@@ -177,23 +179,23 @@
                 <div class="logo-box">
                         <a href="index.html" class="logo text-center logo-dark">
                             <span class="logo-lg">
-                                <img src="{{('frontend/admin/images/logo-dark.png')}}" alt="" height="16">
+                                <img src="{{asset('frontend/admin/images/logo-dark.png')}}" alt="" height="16">
                                 <!-- <span class="logo-lg-text-dark">Moltran</span> -->
                             </span>
                             <span class="logo-sm">
                                 <!-- <span class="logo-lg-text-dark">M</span> -->
-                                <img src="{{('frontend/admin/images/logo-sm.png')}}" alt="" height="25">
+                                <img src="{{asset('frontend/admin/images/logo-sm.png')}}" alt="" height="25">
                             </span>
                         </a>
 
                         <a href="index.html" class="logo text-center logo-light">
                             <span class="logo-lg">
-                                <img src="{{('frontend/admin/images/logo-light.png')}}" alt="" height="16">
+                                <img src="{{asset('frontend/admin/images/logo-light.png')}}" alt="" height="16">
                                 <!-- <span class="logo-lg-text-dark">Moltran</span> -->
                             </span>
                             <span class="logo-sm">
                                 <!-- <span class="logo-lg-text-dark">M</span> -->
-                                <img src="{{('frontend/admin/images/logo-sm.png')}}" alt="" height="25">
+                                <img src="{{asset('frontend/admin/images/logo-sm.png')}}" alt="" height="25">
                             </span>
                         </a>
                     </div>
@@ -237,7 +239,7 @@
                             <div class="user-box">
                     
                                 <div class="float-left">
-                                    <img src="{{('frontend/admin/images/users/avatar-1.jpg')}}" alt="" class="avatar-md rounded-circle">
+                                    <img src="{{asset('frontend/admin/images/users/avatar-1.jpg')}}" alt="" class="avatar-md rounded-circle">
                                     
                                 </div>
                                <div class="user-info">
@@ -267,14 +269,13 @@
     
                                 <li>
                                     <a href="javascript: void(0);" class="waves-effect">
-                                        <i class="mdi mdi-email"></i>
-                                        <span> Mail </span>
+                                    <i class="fas fa-users"></i>
+                                        <span> Employee </span>
                                         <span class="menu-arrow"></span>
                                     </a>
                                     <ul class="nav-second-level" aria-expanded="false">
-                                        <li><a href="mail-inbox.html">Inbox</a></li>
-                                        <li><a href="mail-compose.html">Compose Mail</a></li>
-                                        <li><a href="mail-read.html">View Mail</a></li>
+                                        <li><a href="{{route('employees.create')}}">Add Employee</a></li>
+                                        <li><a href="{{route('employees.index')}}">Employees</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -296,8 +297,18 @@
 
             <div class="content-page">
                 <div class="content">
+                @if(session()->has('success'))
+                    <div class="alert alert-success">
+                    {{session()->get('success')}}
+                    </div>
+                @endif
 
-                  @yield('content')
+                @if(session()->has('error'))
+                    <div class="alert alert-danger">
+                    {{session()->get('error')}}
+                    </div>
+                @endif
+                @yield('content')
 
                 </div>
                 <!-- end content -->
@@ -377,33 +388,96 @@
        
 
         <!-- Vendor js -->
-        <script src="{{('frontend/admin/js/vendor.min.js')}}"></script>
+        <script src="{{asset('frontend/admin/js/vendor.min.js')}}"></script>
 
-        <script src="{{('frontend/admin/libs/moment/moment.min.js')}}"></script>
-        <script src="{{('frontend/admin/libs/jquery-scrollto/jquery.scrollTo.min.js')}}"></script>
-        <script src="{{('frontend/admin/libs/sweetalert2/sweetalert2.min.js')}}"></script>
+        <script src="{{asset('frontend/admin/libs/moment/moment.min.js')}}"></script>
+        <script src="{{asset('frontend/admin/libs/jquery-scrollto/jquery.scrollTo.min.js')}}"></script>
+        <script src="{{asset('frontend/admin/libs/sweetalert2/sweetalert2.min.js')}}"></script>
         
         <!-- Chat app -->
-        <script src="{{('frontend/admin/js/pages/jquery.chat.js')}}"></script>
+        <script src="{{asset('frontend/admin/js/pages/jquery.chat.js')}}"></script>
 
         <!-- Todo app -->
-        <script src="{{('frontend/admin/js/pages/jquery.todo.js')}}"></script>
+        <script src="{{asset('frontend/admin/js/pages/jquery.todo.js')}}"></script>
 
         <!-- flot chart -->
-        <script src="{{('frontend/admin/libs/flot-charts/jquery.flot.js')}}"></script>
-        <script src="{{('frontend/admin/libs/flot-charts/jquery.flot.time.js')}}"></script>
-        <script src="{{('frontend/admin/libs/flot-charts/jquery.flot.tooltip.min.js')}}"></script>
-        <script src="{{('frontend/admin/libs/flot-charts/jquery.flot.resize.js')}}"></script>
-        <script src="{{('frontend/admin/libs/flot-charts/jquery.flot.pie.js')}}"></script>
-        <script src="{{('frontend/admin/libs/flot-charts/jquery.flot.selection.js')}}"></script>
-        <script src="{{('frontend/admin/libs/flot-charts/jquery.flot.stack.js')}}"></script>
-        <script src="{{('frontend/admin/libs/flot-charts/jquery.flot.crosshair.js')}}"></script>
+        <script src="{{asset('frontend/admin/libs/flot-charts/jquery.flot.js')}}"></script>
+        <script src="{{asset('frontend/admin/libs/flot-charts/jquery.flot.time.js')}}"></script>
+        <script src="{{asset('frontend/admin/libs/flot-charts/jquery.flot.tooltip.min.js')}}"></script>
+        <script src="{{asset('frontend/admin/libs/flot-charts/jquery.flot.resize.js')}}"></script>
+        <script src="{{asset('frontend/admin/libs/flot-charts/jquery.flot.pie.js')}}"></script>
+        <script src="{{asset('frontend/admin/libs/flot-charts/jquery.flot.selection.js')}}"></script>
+        <script src="{{asset('frontend/admin/libs/flot-charts/jquery.flot.stack.js')}}"></script>
+        <script src="{{asset('frontend/admin/libs/flot-charts/jquery.flot.crosshair.js')}}"></script>
 
         <!-- Dashboard init JS -->
-        <script src="{{('frontend/admin/js/pages/dashboard.init.js')}}"></script>
+        <script src="{{asset('frontend/admin/js/pages/dashboard.init.js')}}"></script>
 
         <!-- App js -->
-        <script src="{{('frontend/admin/js/app.min.js')}}"></script>
+        <script src="{{asset('frontend/admin/js/app.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js') }}"></script>
+        <script type="text/JavaScript" src="{{ ('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js') }}"></script>
+
+        <script>
+            @if(Session::has('message'))
+              var type="{{Session::get('alert-type','info')}}"
+            switch(type){
+              case 'info':
+              toastr.info("{{ Session::get('message') }}");
+              break;
+
+              case 'success':
+              toastr.success("{{ Session::get('message') }}");
+              break;
+
+              case 'warning':
+              toastr.warning("{{ Session::get('message') }}");
+              break;
+
+              case 'error':
+              toastr.error("{{ Session::get('message') }}");
+              break;
+
+            }
+            @endif
+  </script>
+
+<script>
+  
+  $(document).on("click","#delete", function(e){
+   e.preventDefault();
+ var link = $(this).attr("href");
+ Swal.fire({
+ title: 'Are you sure?',
+ text: "You won't be able to revert this!",
+ icon: 'warning',
+ showCancelButton: true,
+ confirmButtonColor: '#3085d6',
+ cancelButtonColor: '#d33',
+ confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+ if (result.value) {
+   window.location.href=link;
+ 
+ }
+ else{
+     Swal.fire(
+     'Data Safe!'
+   )
+ }
+});
+
+  });
+</script>
+
+<script src="{{asset('frontend/admin/libs/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('frontend/admin/libs/datatables/dataTables.bootstrap4.min.js')}}"></script>
+
+<script>
+    $(document).ready(function(){
+      $('#datatable').dataTable();
+    });
+</script>
 
     </body>
 
