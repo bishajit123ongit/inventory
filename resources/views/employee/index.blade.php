@@ -37,8 +37,8 @@ All Employee
                                         <td>{{$row->address}}</td>
                                         <td>{{$row->phone}}</td>
                                         <td>{{$row->salary}}</td>
-                                        <td> <a href="" class="btn btn-info btn-sm "><i style="margin-right:3px;" class="far fa-edit"></i>Edit</a>
-                                        <a id="delete" href="" class="btn btn-danger btn-sm "><i style="margin-right:3px;" class="fas fa-trash-alt"></i>Delete</a>
+                                        <td> <a href="{{route('employees.edit',$row->id)}}" class="btn btn-info btn-sm "><i style="margin-right:3px;" class="far fa-edit"></i>Edit</a>
+                                        <a id="delete" href="{{route('employees.destroy',$row->id)}}" class="btn btn-danger btn-sm "><i style="margin-right:3px;" class="fas fa-trash-alt"></i>Delete</a>
                                        </td>
                                     </tr>
                                     @endforeach()

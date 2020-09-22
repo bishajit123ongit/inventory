@@ -23,3 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('employees/create', 'EmployeeController@create')->name('employees.create');
 Route::get('employees/index', 'EmployeeController@index')->name('employees.index');
 Route::post('employees/store', 'EmployeeController@store')->name('employees.store');
+Route::get('employees/{id}/destroy', 'EmployeeController@destroy')->name('employees.destroy');
+Route::get('employees/{id}/edit', 'EmployeeController@edit')->name('employees.edit');
+Route::post('employees/{id}/update', 'EmployeeController@update')->name('employees.update');

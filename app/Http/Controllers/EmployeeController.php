@@ -66,6 +66,98 @@ class EmployeeController extends Controller
 
         //session()->flash('success','Employee create successfully!');
 
-        return redirect(route('employees.create'))->with($notification);
+        return redirect(route('employees.index'))->with($notification);
+    }
+
+    public function destroy($id){
+        $deletedEmployee=Employee::all()->where('id',$id)->first();
+        unlink($deletedEmployee->photo);
+        $dltEmployee=$deletedEmployee->delete();
+
+        if($dltEmployee){
+            $notification=array(
+                'message'=>'Employees deleted successfully!',
+                'alert-type'=>'success'
+               );
+        return redirect(route('employees.index'))->with($notification);
+        }
+        else{
+            $notification=array(
+                'message'=>'error',
+                'alert-type'=>'success'
+               );
+        return redirect(route('employees.index'))->with($notification);
+        }
+    }
+
+    public function edit($id){
+        $employee=Employee::all()->where('id',$id)->first();
+        return view('employee.create')->with('employee',$employee);
+    }
+
+    public function update(Request $request,$id){
+        $employee=Employee::all()->where('id',$id)->first();
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|max:255',
+            'nid_no' => 'required|max:255',
+            'address' => 'required',
+            'phone' => 'required|max:15',
+            'salary' => 'required',
+        ]);
+        $data=array();
+
+        $image=$request->file('photo');
+        echo $image;
+        if($image){
+            $data['name']=$request->name;
+            $data['email']=$request->email;
+            $data['address']=$request->address;
+            $data['nid_no']=$request->nid_no;
+            $data['phone']=$request->phone;
+            $data['experience']=$request->experience;
+            $data['salary']=$request->salary;
+            $data['vocation']=$request->vocation;
+            $data['city']=$request->city;
+    
+            
+            $image_name=hexdec(uniqid());
+            $ext=strtolower($image->getClientOriginalExtension());
+            $image_full_name=$image_name.'.'.$ext;
+            $upload_path='image/';
+            $image_url=$upload_path.$image_full_name;
+            $success=$image->move($upload_path,$image_full_name);
+            $data['photo']=$image_url;
+            unlink($employee->photo);
+            $employee=DB::table('employees')->where('id',$id)->update($data);
+
+            $notification=array(
+                'message'=>'Employees updated successfully',
+                'alert-type'=>'success'
+            );
+
+            return redirect(route('employees.index'))->with($notification);
+        }
+        else{
+
+            $data['name']=$request->name;
+            $data['email']=$request->email;
+            $data['address']=$request->address;
+            $data['nid_no']=$request->nid_no;
+            $data['phone']=$request->phone;
+            $data['experience']=$request->experience;
+            $data['salary']=$request->salary;
+            $data['vocation']=$request->vocation;
+            $data['city']=$request->city;
+
+            $employee=DB::table('employees')->where('id',$id)->update($data);
+
+            $notification=array(
+                'message'=>'Employees updated successfully',
+                'alert-type'=>'success'
+            );
+
+            return redirect(route('employees.index'))->with($notification);
+        }
     }
 }
