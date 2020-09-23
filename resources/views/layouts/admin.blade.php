@@ -278,6 +278,32 @@
                                         <li><a href="{{route('employees.index')}}">Employees</a></li>
                                     </ul>
                                 </li>
+
+                                
+                                <li>
+                                    <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="fas fa-users"></i>
+                                        <span> Customer </span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li><a href="{{route('customers.create')}}">Add Customer</a></li>
+                                        <li><a href="{{route('customers.index')}}">Customers</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="fas fa-users"></i>
+                                        <span> Supplier </span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li><a href="{{route('suppliers.create')}}">Add Supplier</a></li>
+                                        <li><a href="{{route('suppliers.index')}}">Suppliers</a></li>
+                                    </ul>
+                                </li>
+
                             </ul>
     
                         </div>

@@ -19,13 +19,13 @@ class CreateCustomersTable extends Migration
             $table->string('email')->nullable();
             $table->string('phone');
             $table->string('address');
-            $table->string('nid_no');
+            $table->string('nid_no')->nullable();
             $table->string('shopname')->nullable();
             $table->string('photo')->nullable();
             $table->string('account_holder')->nullable();
             $table->string('account_number')->nullable();
-            $table->string('bank_name');
-            $table->string('branch_name');
+            $table->string('bank_name')->nullable();
+            $table->string('branch_name')->nullable();
             $table->string('city');
             $table->timestamps();
         });

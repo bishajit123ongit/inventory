@@ -89,7 +89,13 @@
 
                         
                         
-                        <button type="submit" class="btn btn-purple waves-effect waves-light">Submit</button>
+                        <button type="submit" class="btn btn-purple waves-effect waves-light">
+                        @if(isset($employee))
+                         <i style="margin-right:3px;" class="fas fa-pen"></i>Update
+                        @else
+                        <i class="fas fa-plus-square"></i>  Add
+                        @endif
+                        </button>
                     </form>
                 </div>
                 <!-- card-body -->

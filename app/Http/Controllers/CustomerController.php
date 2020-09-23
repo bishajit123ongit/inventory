@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Customer;
 use DB;
-use App\Employee;
 
-class EmployeeController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -19,22 +19,23 @@ class EmployeeController extends Controller
     }
 
     public function create(){
-        return view('employee.create');
+        return view('customer.create');
     }
 
     public function index(){
-        return view('employee.index')->with('employees',Employee::all());
+        return view('customer.index')->with('customers',Customer::all());
     }
 
     public function store(Request $request){
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'email' => 'required|unique:employees|max:255',
-            'nid_no' => 'required|unique:employees|max:255',
+            'email' => 'required|unique:customers|max:255',
+            'nid_no' => 'required|unique:customers|max:255',
             'address' => 'required',
             'phone' => 'required|max:15',
-            'salary' => 'required',
+            'shopname' => 'required',
             'photo' => 'required',
+            'city'=>'required',
         ]);
 
         $data=array();
@@ -43,67 +44,70 @@ class EmployeeController extends Controller
         $data['address']=$request->address;
         $data['nid_no']=$request->nid_no;
         $data['phone']=$request->phone;
-        $data['experience']=$request->experience;
-        $data['salary']=$request->salary;
-        $data['vocation']=$request->vocation;
+        $data['shopname']=$request->shopname;
+        $data['account_holder']=$request->account_holder;
+        $data['account_number']=$request->account_number;
+        $data['bank_name']=$request->bank_name;
+        $data['branch_name']=$request->branch_name;
         $data['city']=$request->city;
 
         $image=$request->file('photo');
         $image_name=hexdec(uniqid());
         $ext=strtolower($image->getClientOriginalExtension());
         $image_full_name=$image_name.'.'.$ext;
-        $upload_path='image/employee/';
+        $upload_path='image/customer/';
         $image_url=$upload_path.$image_full_name;
         $success=$image->move($upload_path,$image_full_name);
         $data['photo']=$image_url;
 
-        $employee=DB::table('employees')->insert($data);
+        $employee=DB::table('customers')->insert($data);
 
         $notification=array(
-            'message'=>'Employees successfully inserted',
+            'message'=>'Customers successfully inserted',
             'alert-type'=>'success'
            );
 
         //session()->flash('success','Employee create successfully!');
 
-        return redirect(route('employees.index'))->with($notification);
+        return redirect(route('customers.index'))->with($notification);
     }
 
     public function destroy($id){
-        $deletedEmployee=Employee::all()->where('id',$id)->first();
-        unlink($deletedEmployee->photo);
-        $dltEmployee=$deletedEmployee->delete();
+        $deletedCustomer=Customer::all()->where('id',$id)->first();
+        unlink($deletedCustomer->photo);
+        $dltCustomer=$deletedCustomer->delete();
 
-        if($dltEmployee){
+        if($dltCustomer){
             $notification=array(
-                'message'=>'Employees deleted successfully!',
+                'message'=>'Customer deleted successfully!',
                 'alert-type'=>'success'
                );
-        return redirect(route('employees.index'))->with($notification);
+        return redirect(route('customers.index'))->with($notification);
         }
         else{
             $notification=array(
                 'message'=>'error',
                 'alert-type'=>'success'
                );
-        return redirect(route('employees.index'))->with($notification);
+        return redirect(route('customers.index'))->with($notification);
         }
     }
 
     public function edit($id){
-        $employee=Employee::all()->where('id',$id)->first();
-        return view('employee.create')->with('employee',$employee);
+        $customer=Customer::all()->where('id',$id)->first();
+        return view('customer.create')->with('customer',$customer);
     }
 
     public function update(Request $request,$id){
-        $employee=Employee::all()->where('id',$id)->first();
+        $customer=Customer::all()->where('id',$id)->first();
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|max:255',
             'nid_no' => 'required|max:255',
             'address' => 'required',
             'phone' => 'required|max:15',
-            'salary' => 'required',
+            'shopname' => 'required',
+            'city'=>'required',
         ]);
         $data=array();
 
@@ -115,28 +119,30 @@ class EmployeeController extends Controller
             $data['address']=$request->address;
             $data['nid_no']=$request->nid_no;
             $data['phone']=$request->phone;
-            $data['experience']=$request->experience;
-            $data['salary']=$request->salary;
-            $data['vocation']=$request->vocation;
+            $data['shopname']=$request->shopname;
+            $data['account_holder']=$request->account_holder;
+            $data['account_number']=$request->account_number;
+            $data['bank_name']=$request->bank_name;
+            $data['branch_name']=$request->branch_name;
             $data['city']=$request->city;
     
             
             $image_name=hexdec(uniqid());
             $ext=strtolower($image->getClientOriginalExtension());
             $image_full_name=$image_name.'.'.$ext;
-            $upload_path='image/employee/';
+            $upload_path='image/customer/';
             $image_url=$upload_path.$image_full_name;
             $success=$image->move($upload_path,$image_full_name);
             $data['photo']=$image_url;
-            unlink($employee->photo);
-            $employee=DB::table('employees')->where('id',$id)->update($data);
+            unlink($customer->photo);
+            $employee=DB::table('customers')->where('id',$id)->update($data);
 
             $notification=array(
-                'message'=>'Employees updated successfully',
+                'message'=>'Customers updated successfully',
                 'alert-type'=>'success'
             );
 
-            return redirect(route('employees.index'))->with($notification);
+            return redirect(route('customers.index'))->with($notification);
         }
         else{
 
@@ -145,19 +151,22 @@ class EmployeeController extends Controller
             $data['address']=$request->address;
             $data['nid_no']=$request->nid_no;
             $data['phone']=$request->phone;
-            $data['experience']=$request->experience;
-            $data['salary']=$request->salary;
-            $data['vocation']=$request->vocation;
+            $data['shopname']=$request->shopname;
+            $data['account_holder']=$request->account_holder;
+            $data['account_number']=$request->account_number;
+            $data['bank_name']=$request->bank_name;
+            $data['branch_name']=$request->branch_name;
             $data['city']=$request->city;
 
-            $employee=DB::table('employees')->where('id',$id)->update($data);
+            $employee=DB::table('customers')->where('id',$id)->update($data);
 
             $notification=array(
-                'message'=>'Employees updated successfully',
+                'message'=>'Customers updated successfully',
                 'alert-type'=>'success'
             );
 
-            return redirect(route('employees.index'))->with($notification);
+            return redirect(route('customers.index'))->with($notification);
         }
     }
 }
+
