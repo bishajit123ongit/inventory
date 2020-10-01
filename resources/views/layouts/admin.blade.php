@@ -304,6 +304,43 @@
                                     </ul>
                                 </li>
 
+                                <li>
+                                    <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="fas fa-users"></i>
+                                        <span> Salary (EMP) </span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li><a href="{{route('salaries.advancesalary')}}">Add Advance salary</a></li>
+                                        <li><a href="{{route('salaries.alladvancesalary')}}">All Salary</a></li>
+                                        <li><a href="{{route('salaries.paysalary')}}">Pay Salary</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="fas fa-users"></i>
+                                        <span> Category </span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li><a href="{{route('categories.create')}}">Add Category</a></li>
+                                        <li><a href="{{route('categories.index')}}">All Category</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="fas fa-users"></i>
+                                        <span> Product </span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li><a href="{{route('products.create')}}">Add Product</a></li>
+                                        <li><a href="#">All Product</a></li>
+                                    </ul>
+                                </li>
+
                             </ul>
     
                         </div>

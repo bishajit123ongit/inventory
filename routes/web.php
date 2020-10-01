@@ -42,3 +42,19 @@ Route::post('suppliers/store', 'SupplierController@store')->name('suppliers.stor
 Route::get('suppliers/{id}/destroy', 'SupplierController@destroy')->name('suppliers.destroy');
 Route::get('suppliers/{id}/edit', 'SupplierController@edit')->name('suppliers.edit');
 Route::post('suppliers/{id}/update', 'SupplierController@update')->name('suppliers.update');
+
+//salary route are here
+Route::get('salaries/advancesalary', 'SalaryController@addAdvanceSalary')->name('salaries.advancesalary');
+Route::get('salaries/alladvancesalary', 'SalaryController@alladvancesalaries')->name('salaries.alladvancesalary');
+Route::post('salaries/storeadvancesalary', 'SalaryController@storeadvancesalary')->name('salaries.storeadvancesalary');
+Route::get('salaries/paysalary', 'SalaryController@paysalary')->name('salaries.paysalary');
+
+Route::resource('categories','CategoryController');
+
+//Products route are here
+Route::get('products/create', 'ProductController@create')->name('products.create');
+ //Route::get('employees/index', 'EmployeeController@index')->name('employees.index');
+Route::post('products/store', 'ProductController@store')->name('products.store');
+// Route::get('employees/{id}/destroy', 'EmployeeController@destroy')->name('employees.destroy');
+// Route::get('employees/{id}/edit', 'EmployeeController@edit')->name('employees.edit');
+// Route::post('employees/{id}/update', 'EmployeeController@update')->name('employees.update');
