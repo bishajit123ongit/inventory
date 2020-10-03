@@ -53,8 +53,8 @@ Route::resource('categories','CategoryController');
 
 //Products route are here
 Route::get('products/create', 'ProductController@create')->name('products.create');
- //Route::get('employees/index', 'EmployeeController@index')->name('employees.index');
+Route::get('products/index', 'ProductController@index')->name('products.index');
 Route::post('products/store', 'ProductController@store')->name('products.store');
-// Route::get('employees/{id}/destroy', 'EmployeeController@destroy')->name('employees.destroy');
-// Route::get('employees/{id}/edit', 'EmployeeController@edit')->name('employees.edit');
-// Route::post('employees/{id}/update', 'EmployeeController@update')->name('employees.update');
+ Route::get('products/{id}/destroy', 'ProductController@destroy')->name('products.destroy');
+ Route::get('products/{id}/edit', 'ProductController@edit')->name('products.edit');
+ Route::post('products/{id}/update', 'ProductController@update')->name('products.update');
