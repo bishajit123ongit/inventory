@@ -341,6 +341,20 @@
                                     </ul>
                                 </li>
 
+                                <li>
+                                    <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="fas fa-users"></i>
+                                        <span> Expense </span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li><a href="{{route('expenses.create')}}">Add New</a></li>
+                                        <li><a href="{{route('expenses.today')}}">Today Expense</a></li>
+                                        <li><a href="{{route('expenses.monthly')}}">Monthly Expense</a></li>
+                                        <li><a href="{{route('expenses.yearly')}}">Yearly Expense</a></li>
+                                    </ul>
+                                </li>
+
                             </ul>
     
                         </div>

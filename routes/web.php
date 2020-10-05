@@ -55,6 +55,16 @@ Route::resource('categories','CategoryController');
 Route::get('products/create', 'ProductController@create')->name('products.create');
 Route::get('products/index', 'ProductController@index')->name('products.index');
 Route::post('products/store', 'ProductController@store')->name('products.store');
- Route::get('products/{id}/destroy', 'ProductController@destroy')->name('products.destroy');
- Route::get('products/{id}/edit', 'ProductController@edit')->name('products.edit');
- Route::post('products/{id}/update', 'ProductController@update')->name('products.update');
+Route::get('products/{id}/destroy', 'ProductController@destroy')->name('products.destroy');
+Route::get('products/{id}/edit', 'ProductController@edit')->name('products.edit');
+Route::post('products/{id}/update', 'ProductController@update')->name('products.update');
+
+ //Expense route are here
+Route::get('expenses/create', 'ExpenseController@create')->name('expenses.create');
+//Route::get('products/index', 'ProductController@index')->name('products.index');
+Route::post('expenses/store', 'ExpenseController@store')->name('expenses.store');
+Route::get('expenses/today', 'ExpenseController@today')->name('expenses.today');
+Route::get('expenses/monthly', 'ExpenseController@monthly')->name('expenses.monthly');
+Route::get('expenses/yearly', 'ExpenseController@yearly')->name('expenses.yearly');
+Route::get('expenses/{id}/todayedit', 'ExpenseController@todayEdit')->name('expenses.todayedit');
+Route::post('expenses/{id}/updatetoday', 'ExpenseController@updatetoday')->name('expenses.updatetoday');
