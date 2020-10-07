@@ -68,3 +68,30 @@ Route::get('expenses/monthly', 'ExpenseController@monthly')->name('expenses.mont
 Route::get('expenses/yearly', 'ExpenseController@yearly')->name('expenses.yearly');
 Route::get('expenses/{id}/todayedit', 'ExpenseController@todayEdit')->name('expenses.todayedit');
 Route::post('expenses/{id}/updatetoday', 'ExpenseController@updatetoday')->name('expenses.updatetoday');
+
+//monthly expenses
+Route::get('expenses/january', 'ExpenseController@january')->name('expenses.january');
+Route::get('expenses/february', 'ExpenseController@february')->name('expenses.february');
+Route::get('expenses/march', 'ExpenseController@march')->name('expenses.march');
+Route::get('expenses/april', 'ExpenseController@april')->name('expenses.april');
+Route::get('expenses/may', 'ExpenseController@may')->name('expenses.may');
+Route::get('expenses/june', 'ExpenseController@june')->name('expenses.june');
+Route::get('expenses/july', 'ExpenseController@july')->name('expenses.july');
+Route::get('expenses/august', 'ExpenseController@august')->name('expenses.august');
+Route::get('expenses/september', 'ExpenseController@september')->name('expenses.september');
+Route::get('expenses/october', 'ExpenseController@october')->name('expenses.october');
+Route::get('expenses/november', 'ExpenseController@november')->name('expenses.november');
+Route::get('expenses/december', 'ExpenseController@december')->name('expenses.december');
+
+//Attendence route are here
+Route::get('attendences/take', 'AttendenceController@take')->name('attendences.take');
+Route::post('attendences/takestore', 'AttendenceController@takestore')->name('attendences.takestore');
+Route::get('attendences/all', 'AttendenceController@allAttendence')->name('attendences.all');
+Route::get('attendences/{edit_date}/edit', 'AttendenceController@edit')->name('attendences.edit');
+Route::post('attendences/updateattendence', 'AttendenceController@updateattendence')->name('attendences.updateattendence');
+Route::get('attendences/{edit_date}/view', 'AttendenceController@view')->name('attendences.view');
+
+//setting route are here
+
+Route::get('setting', 'SettingController@setting')->name('setting');
+Route::post('settings{id}', 'SettingController@update')->name('settings.update');

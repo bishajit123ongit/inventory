@@ -108,7 +108,6 @@ class EmployeeController extends Controller
         $data=array();
 
         $image=$request->file('photo');
-        echo $image;
         if($image){
             $data['name']=$request->name;
             $data['email']=$request->email;

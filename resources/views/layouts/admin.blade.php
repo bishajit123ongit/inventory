@@ -266,6 +266,13 @@
                                         <span> Dashboard </span>
                                     </a>
                                 </li>
+
+                                <li>
+                                    <a href="index.html" class="waves-effect">
+                                        <i class="mdi mdi-home"></i>
+                                        <span class="text-primary"> <b>POS</b> </span>
+                                    </a>
+                                </li>
     
                                 <li>
                                     <a href="javascript: void(0);" class="waves-effect">
@@ -352,6 +359,45 @@
                                         <li><a href="{{route('expenses.today')}}">Today Expense</a></li>
                                         <li><a href="{{route('expenses.monthly')}}">Monthly Expense</a></li>
                                         <li><a href="{{route('expenses.yearly')}}">Yearly Expense</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="fas fa-users"></i>
+                                        <span> Sales Report </span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li><a href="#">First/a></li>
+                                        <li><a href="#">Second</a></li>
+                                    
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="fas fa-users"></i>
+                                        <span> Attendance </span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li><a href="{{route('attendences.take')}}">Take Attendence</a></li>
+                                        <li><a href="{{route('attendences.all')}}">All Attendence</a></li>
+                                        <li><a href="">Monthly Attendence</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="fas fa-users"></i>
+                                        <span> Setting </span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li><a href="{{route('setting')}}">Setting</a></li>
+                                       
+                                    
                                     </ul>
                                 </li>
 
