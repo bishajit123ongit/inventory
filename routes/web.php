@@ -59,6 +59,7 @@ Route::get('products/{id}/destroy', 'ProductController@destroy')->name('products
 Route::get('products/{id}/edit', 'ProductController@edit')->name('products.edit');
 Route::post('products/{id}/update', 'ProductController@update')->name('products.update');
 
+
  //Expense route are here
 Route::get('expenses/create', 'ExpenseController@create')->name('expenses.create');
 //Route::get('products/index', 'ProductController@index')->name('products.index');
@@ -95,3 +96,9 @@ Route::get('attendences/{edit_date}/view', 'AttendenceController@view')->name('a
 
 Route::get('setting', 'SettingController@setting')->name('setting');
 Route::post('settings{id}', 'SettingController@update')->name('settings.update');
+
+
+//excel import and export
+Route::get('products/import', 'ProductController@importProduct')->name('products.import');
+Route::get('export', 'ProductController@export')->name('export');
+Route::post('import', 'ProductController@import')->name('import');

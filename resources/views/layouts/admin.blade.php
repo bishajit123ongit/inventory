@@ -345,6 +345,7 @@
                                     <ul class="nav-second-level" aria-expanded="false">
                                         <li><a href="{{route('products.create')}}">Add Product</a></li>
                                         <li><a href="{{route('products.index')}}">All Product</a></li>
+                                        <li><a href="{{route('products.import')}}">Import Product</a></li>
                                     </ul>
                                 </li>
 
